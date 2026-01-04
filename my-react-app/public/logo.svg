@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="BookXpert logo">
+  <defs>
+    <linearGradient id="gradBlue" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#00AEEF"/>
+      <stop offset="1" stop-color="#0076C8"/>
+    </linearGradient>
+    <linearGradient id="gradDark" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#023A6B"/>
+      <stop offset="1" stop-color="#003A7A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- No background (transparent) -->
+
+  <!-- Swoosh / ring -->
+  <path d="M150 380 C 80 260, 260 120, 560 140 C 860 160, 1000 320, 930 440 C 870 540, 430 600, 150 380 Z"
+        fill="url(#gradDark)" opacity="0.95" transform="translate(0,-40) rotate(-8 600 300)" />
+
+  <!-- Stylized book (tilted square + pages) -->
+  <g transform="translate(360,90) rotate(-20)">
+    <rect x="0" y="0" width="360" height="360" rx="8" ry="8" fill="url(#gradBlue)" />
+    <!-- page furls -->
+    <path d="M44 240 L160 60 L320 240 L300 260 L160 120 L60 260 Z" fill="#ffffff" opacity="0.06" />
+    <!-- page strokes -->
+    <path d="M70 220 L150 120 L280 220" stroke="#9ED7F9" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.95" />
+    <path d="M70 260 L150 180 L280 260" stroke="#63C3F0" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.9" />
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(200,540)">
+    <text x="0" y="0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="120" font-weight="700" fill="#04345E">BOOK</text>
+    <text x="420" y="0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="120" font-weight="700" fill="#00AEEF"> XPERT</text>
+  </g>
+
+</svg>

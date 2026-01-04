@@ -1,0 +1,27 @@
+import React from 'react';
+import { Bell } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+interface HeaderProps {
+  title: string;
+  subtitle?: string;
+}
+
+export const Header: React.FC<HeaderProps> = ({ title, subtitle }) => {
+  return (
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-card/80 px-6 backdrop-blur-sm no-print">
+      <div>
+        <h1 className="text-xl font-semibold text-foreground">{title}</h1>
+        {subtitle && (
+          <p className="text-sm text-muted-foreground">{subtitle}</p>
+        )}
+      </div>
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" size="icon" className="relative">
+          <Bell className="h-5 w-5" />
+          <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-accent" />
+        </Button>
+      </div>
+    </header>
+  );
+};

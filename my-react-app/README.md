@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# my-react-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder is the main React + TypeScript application for the BOOKXPERT assignment. It uses Vite as the build tool and Tailwind CSS for styling. The app includes a dashboard-style UI, auth context, and several feature pages (employees, dashboard, login).
 
-Currently, two official plugins are available:
+Quick start
+-----------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requirements:
+- Node.js v16+ (LTS recommended)
 
-## React Compiler
+Install and run:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+cd my-react-app
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Production build and preview:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm run build
+npm run preview
 ```
+
+Available scripts (from `package.json`):
+- `dev` — start Vite dev server
+- `build` — build for production
+- `build:dev` — build using development mode
+- `preview` — preview production build locally
+- `lint` — run ESLint across the codebase
+
+Key files
+---------
+- `vite.config.ts` — Vite configuration
+- `tailwind.config.ts` — Tailwind setup
+- `tsconfig.app.json`, `tsconfig.json` — TypeScript configs
+- `src/main.tsx` — app bootstrap
+- `src/App.tsx` — routes and layout
+
+Source organization
+-------------------
+- `src/components/` — UI building blocks and feature components
+- `src/components/ui/` — design-system-style primitives (buttons, cards, dialogs)
+- `src/pages/` — route-level pages (Dashboard, Employees, Login, NotFound)
+- `src/contexts/` — `AuthContext` and related providers
+- `src/hooks/` — reusable hooks (auth, employees, toast)
+- `src/lib/` — utilities
+- `src/utils/` — storage helpers
+
+Dependencies summary
+--------------------
+This app uses Radix UI primitives, `react-router-dom`, `react-hook-form`, `@tanstack/react-query`, Tailwind CSS and several utility libraries. See `package.json` for the full list.
+
+Notes & suggestions
+-------------------
+- Linting: run `npm run lint` and fix issues before commits.
+- If you plan to use `bun` or `pnpm`, adjust install commands accordingly.
+
+Need changes?
+------------
+I can update `package.json` metadata (name, version, description), add CI instructions, or scaffold a `CONTRIBUTING.md` and `CHANGELOG.md`. Tell me which you'd like next.
